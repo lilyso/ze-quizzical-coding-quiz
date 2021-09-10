@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Ze Quizzical Coding Quiz</title>
+    <meta name="description" content="Test your knowledge on JavaScript" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="top-nav">
+          <li><a href="#">View Highscores</a></li>
+          <div id="timer">
+              <h3>30 seconds left</h3>
+            </div>
+        </div>
+      </nav>
+        <h1>Ze Quizzical Coding Quiz Challenge<h1>
+    </header>
+    <div class ="starter-page">       
+            <section class = "intro">
+                <p>Test your knowledge of JavaScript! Answer all the questions in 30 seconds. For each question you get wrong, you will lose 10 seconds. For every question you get right, you will gain 10 points.</p>
+            </section>
+        <div class = "start-button"><button class = "start">START</button></div>
+    </div>
+    <section class="quiz">
+      <h2 class="question">What is JavaScript?</h2>
+      <ol>
+        <li class="answers">
+            <p class="answer-text">A client-side scripting language</p>
+        </li>
+        <li class="answers">
+            <p class="answer-text">A server-side scripting language</p>
+        </li>
+        <li class="answers">
+          <p class="answer-text">A client-side and server-side scripting language
+          </p>
+        </li>
+        <li class="answers">
+            <p class="answer-text">The standard markup language for documents designed to be displayed in a web browser
+            </p>
+        </li>
+      </ol>
+    </section>
+    <script src="assets/js/script.js" async defer></script>
+  </body>
+</html>

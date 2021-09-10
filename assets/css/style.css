@@ -1,0 +1,147 @@
+:root {
+  --darkcoloura: #22577a;
+  --medcoloura: #38a3a5;
+  --medcolourb: #57cc99;
+  --lightcolourb: #80ed99;
+  --lightercolourb: #c7f9cc;
+}
+
+body {
+  margin: auto;
+  padding: 40px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.intro {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  color: var(--darkcoloura);
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  color: var(--medcolourb);
+}
+
+header h1 {
+  text-align: center;
+  color: var(--darkcoloura);
+  text-decoration: underline;
+  line-height: 120%;
+}
+
+nav {
+  list-style: none;
+  padding: 10px;
+  flex-direction: row;
+}
+
+#timer {
+  color: var(--darkcoloura);
+  font-size: 20px;
+}
+
+h1 {
+  padding: 20px;
+  font-size: 30px;
+  color: var(--darkcoloura);
+}
+
+h2 {
+  font-size: 24px;
+  padding: 10px;
+  color: var(--darkcoloura);
+}
+
+.start-button {
+  text-align: center;
+  padding: 20px;
+}
+
+.start {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--darkcoloura);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px 30px;
+  background-color: var(--medcolourb);
+  border-radius: 20px;
+  border: none;
+}
+
+.start:hover {
+  background-color: var(--lightcolourb);
+  /* transition: ease-in-out; */
+}
+.quiz {
+  display: flex;
+  flex-direction: column;
+  /* display: none; */
+}
+
+.answers {
+  list-style-type: none;
+  margin: 20px;
+}
+
+.answer-text {
+  padding: 4px 10px;
+  background-color: var(--lightercolourb);
+  border-radius: 10px;
+  line-height: 120%;
+}
+
+.answer-text:hover {
+  background-color: var(--medcolourb);
+}
+
+/* Highscore page styles*/
+
+.highscore-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.highscore-page p {
+  font-size: 18px;
+}
+
+.high-form {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.form-submit {
+  border: none;
+  background-color: var(--medcolourb);
+  border-radius: 20px;
+  padding: 0px 10px;
+  margin-left: 20px;
+}
+
+.high-form label {
+  margin: 10px;
+}
+
+.highscore {
+  padding: 0;
+  margin: 20px;
+}
+
+/* Hidden sections */
+
+#hidden-quiz {
+  display: none;
+}
+
+#start-page-hidden {
+  display: none;
+}
