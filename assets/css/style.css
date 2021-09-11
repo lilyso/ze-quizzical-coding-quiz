@@ -153,10 +153,6 @@ h2 {
   margin: 20px;
 }
 
-.bordered {
-  border: 1px solid;
-}
-
 .highscore-page p {
   font-size: 30px;
   color: var(--darkcoloura);
@@ -168,6 +164,10 @@ h2 {
   display: none;
 }
 
-#start-page-hidden {
+.hidden-starter-page {
+  display: none;
+}
+
+.final-score {
   display: none;
 }
