@@ -4,14 +4,22 @@ var startPage = document.querySelector(".starter-page");
 var timerElement = document.getElementById("timer");
 var timerCount = 30;
 var points = 0;
+var timer;
+
+//When user clicks on start button, start button will be hidden and quiz will be unhidden and start.
 
 startButton.addEventListener("click", function () {
   quiz = document.querySelector(".quiz");
-  quiz.classList.toggle("hidden-quiz");
+  quiz.classList.toggle("hidden");
   startButton.remove();
   updateQuestion();
   startTimer();
+  if (points >= 50) {
+    endgame(); //check
+  }
 });
+
+// Timer
 
 function startTimer() {
   timer = setInterval(function () {
@@ -25,6 +33,8 @@ function startTimer() {
     }
   }, 1000);
 }
+
+// Questions array
 
 var questionEl = document.getElementById("questions");
 var answer1El = document.getElementById("answer1");
@@ -74,6 +84,8 @@ var questions = [
 var currentQuestionIndex = 0;
 var currentQuestion;
 
+// Next questions
+
 function updateQuestion() {
   currentQuestion = questions[currentQuestionIndex];
   questionEl.innerText = currentQuestion.question;
@@ -81,6 +93,8 @@ function updateQuestion() {
   answer2El.innerText = currentQuestion.answers[1];
   answer3El.innerText = currentQuestion.answers[2];
 }
+
+// Check that user has clicked on the correct or incorrect answer
 
 function checkAnswer(clickedAnswer) {
   if (!currentQuestion) {
@@ -93,10 +107,9 @@ function checkAnswer(clickedAnswer) {
   } else {
     console.log("Oops, wrong answer");
     timerCount = timerCount - 10;
-    if (timerCount === 0);
-    {
+    if (timerCount <= 0) {
+      endgame(); // make function - submit page
     }
-    // return to submit form
   }
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {

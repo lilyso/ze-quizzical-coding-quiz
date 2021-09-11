@@ -160,14 +160,14 @@ h2 {
 
 /* Hidden sections */
 
-.hidden-quiz {
+.hidden {
   display: none;
 }
 
-.hidden-starter-page {
+/* .hidden-starter-page {
   display: none;
 }
 
 .final-score {
   display: none;
-}
+} */
