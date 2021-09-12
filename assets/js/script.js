@@ -136,7 +136,8 @@ function checkAnswer(clickedAnswer) {
   }
 }
 
-submitInitials.addEventListener("click", function () {
+submitInitials.addEventListener("click", function (event) {
+  event.preventDefault();
   saveGame();
 });
 
@@ -155,7 +156,7 @@ function saveGame() {
     alert("Please enter initials");
     return;
   }
-  var games = localStorage.getItem("games");
+  var games = localStorage.getItem("game");
   if (!games) {
     games = [];
   } else {
