@@ -13,48 +13,53 @@
     <header>
       <nav>
         <div class="top-nav">
-          <li><a href="#">View Highscores</a></li>
-              <h3 id="timer">30 seconds left</h3>
+          <li><a href="highscores.html">View Highscores</a></li>
+          <h3 id="timer">30 seconds left</h3>
         </div>
       </nav>
-        <h1>Ze Quizzical Coding Quiz Challenge<h1>
+      <h1>Ze Quizzical Coding Quiz Challenge</h1>
     </header>
-      <div class = "main">
-        <div class ="starter-page">       
-            <section class = "intro">
-                <p>Test your knowledge of JavaScript! Answer all the questions in 30 seconds. For each question you get wrong, you will lose 10 seconds. For every question you get right, you will gain 10 points.</p>
-            </section>
-        <div class = "start-button"><button class = "start">START</button>
-        </div>
+    <div id="main">
+      <div class="starter-page">
+        <section class="intro">
+          <p>
+            Test your knowledge of JavaScript! Answer all the questions in 30
+            seconds. For each question you get wrong, you will lose 10 seconds.
+            For every question you get right, you will gain 10 points.
+          </p>
+        </section>
+        <div class="start-button"><button class="start">START</button></div>
       </div>
       <section class="quiz hidden">
-        <h2 id = "questions">What is JavaScript?</h2>
+        <h2 id="questions">What is JavaScript?</h2>
         <ol>
           <li class="answers">
-              <p class="answer-text" id = "answer1">A client-side scripting language
-              </p>
+            <p class="answer-text" id="answer1">
+              A client-side scripting language
+            </p>
           </li>
           <li class="answers">
-              <p class="answer-text" id = "answer2">A client-side and server-side scripting language
-              </p>
+            <p class="answer-text" id="answer2">
+              A client-side and server-side scripting language
+            </p>
           </li>
           <li class="answers">
-              <p class="answer-text" id =  "answer3">The standard markup language for documents designed to be displayed in a web browser
-              </p>
+            <p class="answer-text" id="answer3">
+              The standard markup language for documents designed to be
+              displayed in a web browser
+            </p>
           </li>
         </ol>
       </section>
     </div>
-      <div class = "highscore-page hidden">
-        <h1 class = "highscore" >All done!</h1>
-        <p class = "highscore">Your score is <span id = "final-score">0</span></p>
-        <form class = "high-form">
-            <label for="initials">Add Initials</label><br>
-            <input type="text" id="initials" name="initials"><br>
-            <button class="form-submit">
-            SUBMIT
-            </button>
-        </form>
+    <div class="highscore-page-submit hidden">
+      <h1 class="highscore">All done!</h1>
+      <p class="highscore">Your score is <span id="score">0</span></p>
+      <form class="high-form">
+        <label for="initials">Add Initials</label><br />
+        <input type="text" id="initials" name="initials" /><br />
+        <button class="button" id="submit-initials">SUBMIT</button>
+      </form>
     </div>
     <script src="assets/js/script.js" async defer></script>
   </body>

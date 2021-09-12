@@ -106,10 +106,31 @@ h2 {
 .highscore-page {
   display: flex;
   flex-direction: column;
+}
+
+.score-table {
+  background-color: var(--medcolourb);
+  margin: 20px;
+  padding: 10px;
+}
+
+.high-score-button {
+  display: flex;
+  flex-direction: row;
+}
+
+.high-score-buttons a:hover {
+  background-color: var(--lightcolourb);
+}
+/* Submit score styles*/
+
+.highscore-page-submit {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-.highscore-page p {
+.highscore-page-submit p {
   font-size: 18px;
 }
 
@@ -119,7 +140,8 @@ h2 {
   margin: 10px;
 }
 
-.form-submit {
+.button,
+.high-score-buttons a {
   border: none;
   background-color: var(--medcolourb);
   margin-left: 20px;
@@ -129,6 +151,7 @@ h2 {
   padding: 8px 20px;
   background-color: var(--medcolourb);
   border-radius: 20px;
+  text-decoration: none;
 }
 
 .form-submit:hover {

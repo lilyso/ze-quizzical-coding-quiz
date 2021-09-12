@@ -2,6 +2,11 @@ var startButton = document.querySelector(".start-button");
 var quiz = document.querySelector(".quiz");
 var startPage = document.querySelector(".starter-page");
 var timerElement = document.getElementById("timer");
+var submitInitials = document.getElementById("submit-initials");
+var finalScore = document.querySelector(".highscore-page-submit");
+var main = document.getElementById("main");
+var initialsEl = document.getElementById("initials");
+var scoreSp = document.getElementById("score");
 var timerCount = 30;
 var points = 0;
 var timer;
@@ -15,7 +20,7 @@ startButton.addEventListener("click", function () {
   updateQuestion();
   startTimer();
   if (points >= 50) {
-    endgame(); //check
+    endGame();
   }
 });
 
@@ -84,6 +89,18 @@ var questions = [
 var currentQuestionIndex = 0;
 var currentQuestion;
 
+answer1El.addEventListener("click", function () {
+  checkAnswer(0);
+});
+
+answer2El.addEventListener("click", function () {
+  checkAnswer(1);
+});
+
+answer3El.addEventListener("click", function () {
+  checkAnswer(2);
+});
+
 // Next questions
 
 function updateQuestion() {
@@ -108,25 +125,43 @@ function checkAnswer(clickedAnswer) {
     console.log("Oops, wrong answer");
     timerCount = timerCount - 10;
     if (timerCount <= 0) {
-      endgame(); // make function - submit page
+      endGame();
     }
   }
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
     updateQuestion();
   } else {
-    // clear timer and show submit form
+    endGame();
   }
 }
 
-answer1El.addEventListener("click", function () {
-  checkAnswer(0);
+submitInitials.addEventListener("click", function () {
+  saveGame();
 });
 
-answer2El.addEventListener("click", function () {
-  checkAnswer(1);
-});
+function endGame() {
+  main.classList.toggle("hidden");
+  finalScore.classList.toggle("hidden");
+  scoreSp.innerText = points;
+}
 
-answer3El.addEventListener("click", function () {
-  checkAnswer(2);
-});
+function saveGame() {
+  var game = {
+    initials: initialsEl.value,
+    score: points,
+  };
+  if (initialsEl.value === "") {
+    alert("Please enter initials");
+    return;
+  }
+  var games = localStorage.getItem("games");
+  if (!games) {
+    games = [];
+  } else {
+    JSON.parse(games);
+  }
+  games.push(game);
+  localStorage.setItem("games", JSON.stringify(games));
+  window.location.replace("highscores.html");
+}

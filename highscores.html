@@ -10,16 +10,20 @@
     </head>
     <body>
         <div class = "highscore-page">
-            <h1 class = "highscore" >All done!</h1>
-            <p class = "highscore">Your score is <span id = "final-score">0</span></p>
-            <form class = "high-form">
-                <label for="initials">Add Initials</label><br>
-                <input type="text" id="initials" name="initials"><br>
-                <button class="form-submit">
-                SUBMIT
-                </button>
-            </form>
+            <h1 class = "highscore" >Highscores</h1>
+            <ol>
+            <div id = "score-table"></div>
+            <div class = "high-score-buttons">
+                <a href="index.html">
+                GO BACK
+                </a>
+                <a href="#" id = clear-scores>
+                CLEAR SCORES
+                </a>
+            </div>
+            </ol>
         </div>
-        <script src="" async defer></script>
+        <script src="assets/js/highscores-script.js" async defer></script>
+ 
     </body>
 </html>
