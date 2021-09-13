@@ -32,11 +32,13 @@ function startTimer() {
   timer = setInterval(function () {
     timerCount--;
     console.log(timerCount);
-    timerElement.innerHTML = timerCount + " seconds left";
+    timerElement.innerText = timerCount + " seconds left";
     if (timerCount === 1) {
-      timerElement.innerHTML = timerCount + " second left";
-    } else if (timerCount === 0) {
+      timerElement.innerText = timerCount + " second left";
+    } else if (timerCount <= 0) {
       clearInterval(timer);
+      timerElement.innerText = "0 seconds left";
+      endGame();
     }
   }, 1000);
 }
@@ -128,19 +130,17 @@ function checkAnswer(clickedAnswer) {
     rightWrong.innerText = "Oops, wrong answer 😔 - 10 SECONDS";
     rightWrong.setAttribute("style", "color: #f47174");
     timerCount = timerCount - 10;
-    if (timerCount <= 0) {
-      clearInterval(timer);
-      endGame();
-    }
   }
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
     updateQuestion();
   } else {
-    clearInterval(timer);
     endGame();
   }
   keepScore.innerText = points + " points";
+  setTimeout(function () {
+    rightWrong.innerText = "";
+  }, 700);
 }
 
 submitInitials.addEventListener("click", function (event) {
@@ -163,12 +163,11 @@ function saveGame() {
     alert("Please enter initials");
     return;
   }
-  var games = localStorage.getItem("game");
-  console.log(games);
-  if (!games) {
+  var games = localStorage.getItem("games");
+  if (!games || games === null || games === "null") {
     games = [];
   } else {
-    JSON.parse(games);
+    games = JSON.parse(games);
   }
   games.push(game);
   localStorage.setItem("games", JSON.stringify(games));
