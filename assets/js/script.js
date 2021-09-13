@@ -7,6 +7,8 @@ var finalScore = document.querySelector(".highscore-page-submit");
 var main = document.getElementById("main");
 var initialsEl = document.getElementById("initials");
 var scoreSp = document.getElementById("score");
+var rightWrong = document.getElementById("right-wrong");
+var keepScore = document.getElementById("score-log");
 var timerCount = 30;
 var points = 0;
 var timer;
@@ -118,13 +120,16 @@ function checkAnswer(clickedAnswer) {
     return;
   }
   if (currentQuestion.correctAnswer === clickedAnswer) {
-    console.log("Yay, correct answer!");
+    rightWrong.innerText = "Yay, correct answer! 🥳 + 10 POINTS";
+    rightWrong.setAttribute("style", "color: #57cc99");
     points = points + 10;
     console.log(points);
   } else {
-    console.log("Oops, wrong answer");
+    rightWrong.innerText = "Oops, wrong answer 😔 - 10 SECONDS";
+    rightWrong.setAttribute("style", "color: #f47174");
     timerCount = timerCount - 10;
     if (timerCount <= 0) {
+      clearInterval(timer);
       endGame();
     }
   }
@@ -132,8 +137,10 @@ function checkAnswer(clickedAnswer) {
   if (currentQuestionIndex < questions.length) {
     updateQuestion();
   } else {
+    clearInterval(timer);
     endGame();
   }
+  keepScore.innerText = points + " points";
 }
 
 submitInitials.addEventListener("click", function (event) {
@@ -157,6 +164,7 @@ function saveGame() {
     return;
   }
   var games = localStorage.getItem("game");
+  console.log(games);
   if (!games) {
     games = [];
   } else {

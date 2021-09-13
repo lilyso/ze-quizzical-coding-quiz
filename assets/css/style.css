@@ -41,9 +41,10 @@ nav {
   flex-direction: row;
 }
 
-#timer {
+.keep-score {
   color: var(--darkcoloura);
   font-size: 20px;
+  padding: 5px;
 }
 
 h1 {
