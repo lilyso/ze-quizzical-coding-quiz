@@ -17,7 +17,7 @@ var timer;
 
 startButton.addEventListener("click", function () {
   quiz = document.querySelector(".quiz");
-  quiz.classList.toggle("hidden");
+  quiz.classList.remove("hidden");
   startButton.remove();
   updateQuestion();
   startTimer();
@@ -149,8 +149,8 @@ submitInitials.addEventListener("click", function (event) {
 });
 
 function endGame() {
-  main.classList.toggle("hidden");
-  finalScore.classList.toggle("hidden");
+  main.classList.add("hidden");
+  finalScore.classList.remove("hidden");
   scoreSp.innerText = points;
 }
 
