@@ -6,19 +6,16 @@ var storedGames = JSON.parse(localStorage.getItem("games"));
 // The following function renders items in a list as <li> elements
 function renderScores() {
   for (var i = 0; i < storedGames.length; i++) {
-    liScore.setAttribute(
-      "style",
-      "background-color:#c7f9cc; padding:20px; margin:20px"
-    );
-
-    leaderBoard.appendChild(liScore);
-
-    liScore.textContent =
+    var gameValues =
       storedGames[i]["initials"] + " - " + storedGames[i]["score"];
+    console.log(gameValues);
   }
+  liScore.setAttribute(
+    "style",
+    "background-color:#c7f9cc; padding:20px; margin:20px"
+  );
 
-  //     leaderBoard.appendChild(liScore);
-  //   }
+  leaderBoard.appendChild(liScore);
 }
 
 // function init() {
