@@ -60,7 +60,7 @@ var questions = [
     correctAnswer: 1,
   },
   {
-    question: "What are JavaScript Data Types",
+    question: "What are JavaScript Data Types?",
     answers: ["Number & String", "Boolean & Object", "All of the above"],
     correctAnswer: 2,
   },
