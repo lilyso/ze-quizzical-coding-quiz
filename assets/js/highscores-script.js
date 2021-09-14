@@ -25,17 +25,11 @@ function compare(a, b) {
   return 0;
 }
 
-//   objs.sort( compare );
-// function init() {
-//   if (storedGames !== null) {
-//     gameScores = storedGames;
-//   }
-// }
+if (storedGames !== null) {
+  renderScores();
+}
 
-renderScores();
-
-// init();
-
-// clearScore.addEventListener("click", function () {
-//   liScore.textContent = "";
-// });
+clearScore.addEventListener("click", function () {
+  localStorage.removeItem("games");
+  leaderBoard.innerHTML = `<li>No scores</li>`;
+});

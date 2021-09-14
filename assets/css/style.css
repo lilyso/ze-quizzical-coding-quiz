@@ -107,12 +107,12 @@ h2 {
 .highscore-page {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.score-table {
-  background-color: var(--medcolourb);
-  margin: 20px;
-  padding: 10px;
+#score-table {
+  padding: 0px 0px 20px 0px;
 }
 
 .high-score-button {
@@ -139,7 +139,7 @@ h2 {
   background-color: var(--lightercolourb);
   padding: 5px 20px;
   font-size: 18px;
-  margin: 20px;
+  margin: 20px 40px;
 }
 .high-form {
   display: flex;
@@ -179,8 +179,8 @@ h2 {
 }
 
 .highscore {
-  padding: 0;
-  margin: 20px;
+  padding: 20px;
+  margin: auto;
 }
 
 .highscore-page p {
