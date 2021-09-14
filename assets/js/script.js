@@ -3,7 +3,7 @@ var quiz = document.querySelector(".quiz");
 var startPage = document.querySelector(".starter-page");
 var timerElement = document.getElementById("timer");
 var submitInitials = document.getElementById("submit-initials");
-var finalScore = document.querySelector(".highscore-page-submit");
+var finalScore = document.querySelector(".highscore-submit");
 var main = document.getElementById("main");
 var initialsEl = document.getElementById("initials");
 var scoreSp = document.getElementById("score");
@@ -13,7 +13,7 @@ var timerCount = 30;
 var points = 0;
 var timer;
 
-//When user clicks on start button, start button will be hidden and quiz will be unhidden and start.
+// When user clicks on start button, start button will be hidden and quiz will be unhidden and start.
 
 startButton.addEventListener("click", function () {
   quiz = document.querySelector(".quiz");
@@ -43,7 +43,7 @@ function startTimer() {
   }, 1000);
 }
 
-// Questions array
+// Questions & answers array
 
 var questionEl = document.getElementById("questions");
 var answer1El = document.getElementById("answer1");
@@ -90,8 +90,7 @@ var questions = [
   },
 ];
 
-var currentQuestionIndex = 0;
-var currentQuestion;
+// User's choice event listeners
 
 answer1El.addEventListener("click", function () {
   checkAnswer(0);
@@ -105,7 +104,10 @@ answer3El.addEventListener("click", function () {
   checkAnswer(2);
 });
 
-// Next questions
+// Next question function
+
+var currentQuestionIndex = 0;
+var currentQuestion;
 
 function updateQuestion() {
   currentQuestion = questions[currentQuestionIndex];
@@ -115,7 +117,7 @@ function updateQuestion() {
   answer3El.innerText = currentQuestion.answers[2];
 }
 
-// Check that user has clicked on the correct or incorrect answer
+// Check that user has clicked on the correct or incorrect answer + point system
 
 function checkAnswer(clickedAnswer) {
   if (!currentQuestion) {
@@ -143,16 +145,22 @@ function checkAnswer(clickedAnswer) {
   }, 700);
 }
 
+// Initials form - prevent reloading page
+
 submitInitials.addEventListener("click", function (event) {
   event.preventDefault();
   saveGame();
 });
+
+// Endgame function - hide quiz, unhide submit form and show final score
 
 function endGame() {
   main.classList.add("hidden");
   finalScore.classList.remove("hidden");
   scoreSp.innerText = points;
 }
+
+// Save game result to local storage and load highscore page
 
 function saveGame() {
   var game = {

@@ -12,6 +12,18 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+h1 {
+  padding: 20px;
+  font-size: 30px;
+  color: var(--darkcoloura);
+}
+
+h2 {
+  font-size: 24px;
+  padding: 10px;
+  color: var(--darkcoloura);
+}
+
 .intro {
   text-align: center;
   padding: 20px;
@@ -40,6 +52,7 @@ nav {
   padding: 10px;
   flex-direction: row;
 }
+/* Timer & Score tracker*/
 
 .keep-score {
   color: var(--darkcoloura);
@@ -47,17 +60,7 @@ nav {
   padding: 5px;
 }
 
-h1 {
-  padding: 20px;
-  font-size: 30px;
-  color: var(--darkcoloura);
-}
-
-h2 {
-  font-size: 24px;
-  padding: 10px;
-  color: var(--darkcoloura);
-}
+/* Start button*/
 
 .start-button {
   text-align: center;
@@ -78,8 +81,10 @@ h2 {
 
 .start:hover {
   background-color: var(--lightcolourb);
-  /* transition: ease-in-out; */
 }
+
+/* Quiz */
+
 .quiz {
   display: flex;
   flex-direction: column;
@@ -123,17 +128,6 @@ h2 {
 .high-score-buttons a:hover {
   background-color: var(--lightcolourb);
 }
-/* Submit score styles*/
-
-.highscore-page-submit {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.highscore-page-submit p {
-  font-size: 18px;
-}
 
 .highscore-page li {
   background-color: var(--lightercolourb);
@@ -141,6 +135,19 @@ h2 {
   font-size: 18px;
   margin: 20px 40px;
 }
+
+/* Submit form styles*/
+
+.highscore-submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.highscore-submit p {
+  font-size: 18px;
+}
+
 .high-form {
   display: flex;
   flex-direction: row;

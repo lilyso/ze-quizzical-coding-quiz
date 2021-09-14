@@ -1,9 +1,9 @@
 var leaderBoard = document.getElementById("score-table");
 var clearScore = document.getElementById("clear-scores");
-var liScore = document.createElement("li");
 var storedGames = JSON.parse(localStorage.getItem("games"));
 
-// The following function renders items in a list as <li> elements
+//Renders scores in a list as <li> elements
+
 function renderScores() {
   storedGames.sort(compare);
   storedGames.reverse();
@@ -15,6 +15,8 @@ function renderScores() {
   }
 }
 
+// Arrange scores in order from highest to lowest
+
 function compare(a, b) {
   if (a.score < b.score) {
     return -1;
@@ -25,9 +27,13 @@ function compare(a, b) {
   return 0;
 }
 
+// Render leaderboard only if scores are available
+
 if (storedGames !== null) {
   renderScores();
 }
+
+// Clear scores from leaderboard
 
 clearScore.addEventListener("click", function () {
   localStorage.removeItem("games");
