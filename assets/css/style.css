@@ -135,6 +135,12 @@ h2 {
   font-size: 18px;
 }
 
+.highscore-page li {
+  background-color: var(--lightercolourb);
+  padding: 5px 20px;
+  font-size: 18px;
+  margin: 20px;
+}
 .high-form {
   display: flex;
   flex-direction: row;

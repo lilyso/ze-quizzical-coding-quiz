@@ -5,19 +5,27 @@ var storedGames = JSON.parse(localStorage.getItem("games"));
 
 // The following function renders items in a list as <li> elements
 function renderScores() {
+  storedGames.sort(compare);
+  storedGames.reverse();
   for (var i = 0; i < storedGames.length; i++) {
     var gameValues =
       storedGames[i]["initials"] + " - " + storedGames[i]["score"];
     console.log(gameValues);
+    leaderBoard.innerHTML += `<li>${gameValues}</li>`;
   }
-  liScore.setAttribute(
-    "style",
-    "background-color:#c7f9cc; padding:20px; margin:20px"
-  );
-
-  leaderBoard.appendChild(liScore);
 }
 
+function compare(a, b) {
+  if (a.score < b.score) {
+    return -1;
+  }
+  if (a.score > b.score) {
+    return 1;
+  }
+  return 0;
+}
+
+//   objs.sort( compare );
 // function init() {
 //   if (storedGames !== null) {
 //     gameScores = storedGames;
@@ -25,6 +33,7 @@ function renderScores() {
 // }
 
 renderScores();
+
 // init();
 
 // clearScore.addEventListener("click", function () {
