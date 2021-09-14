@@ -36,7 +36,6 @@ function startTimer() {
     if (timerCount === 1) {
       timerElement.innerText = timerCount + " second left";
     } else if (timerCount <= 0) {
-      clearInterval(timer);
       timerElement.innerText = "0 seconds left";
       endGame();
     }
@@ -155,6 +154,7 @@ submitInitials.addEventListener("click", function (event) {
 // Endgame function - hide quiz, unhide submit form and show final score
 
 function endGame() {
+  clearInterval(timer);
   main.classList.add("hidden");
   finalScore.classList.remove("hidden");
   scoreSp.innerText = points;
