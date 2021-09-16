@@ -83,12 +83,11 @@ nav {
   background-color: var(--lightcolourb);
 }
 
-/* Quiz */
+/* Quiz styles*/
 
 .quiz {
   display: flex;
   flex-direction: column;
-  /* display: none; */
 }
 
 .answers {
@@ -195,7 +194,7 @@ nav {
   color: var(--darkcoloura);
 }
 
-/* Hidden sections */
+/* Hidden sections class - added with JS */
 
 .hidden {
   display: none;

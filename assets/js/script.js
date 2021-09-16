@@ -160,11 +160,11 @@ function endGame() {
   scoreSp.innerText = points;
 }
 
-// Save game result to local storage and load highscore page
+// Save quiz result to local storage and load highscore page
 
 function saveGame() {
   var game = {
-    initials: initialsEl.value,
+    initials: initialsEl.value.toUpperCase(),
     score: points,
   };
   if (initialsEl.value === "") {
